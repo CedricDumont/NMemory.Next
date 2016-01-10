@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>NMemory.Next</id>
+    <version>$version$</version>
+    <title>NMemory.Next</title>
+    <authors>Dumont Cedric</authors>
+    <owners>Dumont Cedric</owners>
+    <projectUrl>https://github.com/CedricDumont/nmemory</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Added Features to NMemory project. so that it is immediatly available as nuget package before Pull requests...</description>
+    <summary>Added Features to NMemory project</summary>
+    <copyright>Copyright</copyright>
+    <tags>.NET</tags> 
+  </metadata>
+  <files />
+</package>
