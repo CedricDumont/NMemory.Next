@@ -653,6 +653,27 @@ namespace NMemory.Tables
 
         #endregion
 
+        public void Clear(bool resetIdentitySeed = false)
+        {
+            NMemory.Linq.QueryableEx.Delete(this);
+
+            if (resetIdentitySeed)
+            {
+                ResetIdentitySeed();
+            }
+        }
+
+        /// <summary>
+        /// This method reset the seed of the identityField
+        /// </summary>
+        public void ResetIdentitySeed()
+        {
+            if(this.identityField != null)
+            {
+                this.identityField.Reset();
+            }
+        }
+
         /// <summary>
         ///     Returns a <see cref="System.String"/> that represents this instance.
         /// </summary>
@@ -674,6 +695,8 @@ namespace NMemory.Tables
         {
             return Activator.CreateInstance<TEntity>();
         }
+
+
 
         protected virtual void GenerateIdentityFieldValue(TEntity entity)
         {

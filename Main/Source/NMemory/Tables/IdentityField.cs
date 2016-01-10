@@ -53,6 +53,11 @@ namespace NMemory.Tables
             this.identityGetter = this.identitySpecification.IdentityColumn.Compile();
         }
 
+        internal void Reset()
+        {
+            this.nextIdentity = this.identitySpecification.Seed;
+        }
+
         internal void InitializeBasedOnData(IEnumerable<TEntity> initialEntities)
         {
             long? currentNextIdentity = null;

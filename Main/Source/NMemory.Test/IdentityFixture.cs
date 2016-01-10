@@ -54,5 +54,29 @@ namespace NMemory.Test
 
             Assert.AreEqual(group1.Id + 1, group2.Id);
         }
+
+        [TestMethod]
+        public void InsertEntityAfterReseed()
+        {
+            Database database = new Database();
+
+            Table<Group, int> table = database.Tables.Create<Group, int>(g => g.Id, new IdentitySpecification<Group>(g => g.Id));
+
+            Group group1 = new Group { Name = "Group 1" };
+
+            table.Insert(group1);
+
+            Assert.AreEqual(group1.Id, 1);
+
+            table.Clear(true);
+            Group group2 = new Group { Name = "Group 2" };
+            table.Insert(group2);
+            Assert.AreEqual(group1.Id, 1);
+
+            //just add another to check if still increment
+            Group group3 = new Group { Name = "Group 3" };
+            table.Insert(group3);
+            Assert.AreEqual(group3.Id, 2);
+        }
     }
 }
