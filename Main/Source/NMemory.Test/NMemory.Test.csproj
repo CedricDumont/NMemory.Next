@@ -96,9 +96,9 @@
     <Compile Include="Visitors\EntityTypeSearchVisitorFixture.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NMemory\NMemory.csproj">
+    <ProjectReference Include="..\NMemory\NMemory.Next.csproj">
       <Project>{E95EF85F-FAC7-476E-8333-2D835BD41BD9}</Project>
-      <Name>NMemory</Name>
+      <Name>NMemory.Next</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
